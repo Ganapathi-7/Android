@@ -3,11 +3,13 @@ plugins {
 }
 
 android {
-    namespace 'com.smartapp.listapp'
+    // Add the namespace here (use your package name)
+    namespace 'com.smartapp.listapp'  // Set your package name here
+
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.smartapp.listapp"
+        applicationId "com.smartapp.listapp"  // This should match the namespace
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -16,12 +18,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding true  // Enable View Binding
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -29,7 +36,6 @@ android {
 }
 
 dependencies {
-
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
